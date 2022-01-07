@@ -1,2 +1,7 @@
 # course-python
- Python bootcamp (100 days of code).
+
+Python studies from the Udemy website.
+
+All files were based on the course from the cited site.
+
+https://www.udemy.com/course/100-days-of-code/
