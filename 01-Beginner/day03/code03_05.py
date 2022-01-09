@@ -1,3 +1,5 @@
+# Love Calculator
+
 # 🚨 Don't change the code below 👇
 print("Welcome to the Love Calculator!")
 name1 = input("What is your name? \n")
