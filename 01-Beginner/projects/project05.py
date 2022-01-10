@@ -23,8 +23,10 @@ password = list()
 
 for i in range(len1):
     password.append(random.choice(letters))
+
 for i in range(len2):
     password.append(random.choice(symbols))
+
 for i in range(len3):
     password.append(random.choice(numbers))
 
