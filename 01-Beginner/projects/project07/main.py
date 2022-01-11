@@ -2,7 +2,7 @@
 The Hangman game
 """
 
-from hm_database import word_selection
+from hm_database import Word_selection
+from hm_attempts import Letter_test
 
-test = word_selection()
-test.read_draws()
+initial_game = Letter_test()
