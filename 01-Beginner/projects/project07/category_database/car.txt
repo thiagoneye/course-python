@@ -1,0 +1,35 @@
+audi
+bandeirante
+belina
+bmw
+bora
+camaro
+cadillac
+corcel
+corolla
+chevette
+civic
+del rey
+fusca
+ferrari
+gol
+golf
+gurgel
+hb20
+hrv
+jeep
+kombi
+land rover
+lamborghini
+maverick
+mustang
+opala
+porsche
+passat
+ranger rover
+santana
+santa fe
+tesla
+tucson
+uno
+vectra
