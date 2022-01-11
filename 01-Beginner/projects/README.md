@@ -5,7 +5,7 @@
 3. Treasure Island (Game)
 4. Rock Paper Scissors (Game)
 5. PyPassword Generator
-6. 
+6. (Game executed online)
 7. Hangman (Game)
 
 Observations:
