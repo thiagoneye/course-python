@@ -30,7 +30,6 @@ class Letter_test(Read_database):
         while self.__continue:
             self.__check_letter__()
 
-
     def __generator_gap__(self):
         """
         Generates leading gaps based on word length.
