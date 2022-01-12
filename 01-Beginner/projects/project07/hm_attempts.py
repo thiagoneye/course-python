@@ -99,7 +99,7 @@ class Letter_test(Read_database):
         """
 
         if (self.gap.count('_') == 0):
-            print('You win!')
+            print('\nYou win!')
             self.__continue = False
 
     def __check_defeat__(self):
