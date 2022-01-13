@@ -3,15 +3,12 @@ The Hangman game
 """
 
 import os
-from hm_attempts import Letter_test
+from hm_game import Hangman
 
 restart = True
 while restart:
     os.system('cls') or None
-
-    print('Welcome to the Hangman Game!\n')
-    initial_game = Letter_test()
-
+    initial_game = Hangman()
     verify_restart = input('Do you want restart the game? [Y] Yes or [N] No\n')
 
     if (verify_restart != 'Y'):

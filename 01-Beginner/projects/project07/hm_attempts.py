@@ -2,9 +2,7 @@
 The Hangman Game
 """
 
-from hm_database import Read_database
-
-class Letter_test(Read_database):
+class Letter_test:
     """
     Letter Test
 
@@ -12,25 +10,17 @@ class Letter_test(Read_database):
     """
 
     def __init__(self):
-        """
-        Constructor
-        """
-
-        Read_database.__init__(self)
 
         self.gap = ''
         self.checked_letters = list()
         self.correct_letters = list()
         self.mistakes = 0
-        self.__continue = True
+        self.continue_game = True
 
-        self.__generator_gap__()
-        self.__print_gap__()
+        self.generator_gap()
+        self.print_gap()
 
-        while self.__continue:
-            self.__check_letter__()
-
-    def __generator_gap__(self):
+    def generator_gap(self):
         """
         Generates leading gaps based on word length.
         """
@@ -43,7 +33,7 @@ class Letter_test(Read_database):
             else:
                 self.gap += '_'
 
-    def __print_gap__(self):
+    def print_gap(self):
         """
         Print the current gap.
         """
@@ -67,7 +57,7 @@ class Letter_test(Read_database):
 
             __idx += 1
 
-    def __check_letter__(self):
+    def check_letter(self):
         """
         It imputs a letter, checks if is correct, notify the hit/miss.
         """
@@ -82,7 +72,7 @@ class Letter_test(Read_database):
             print('The word contains the letter.\n')
             self.__modify_gap__(test=__test)
             self.print_draws()
-            self.__print_gap__()
+            self.print_gap()
             self.__check_win__()
         else:
             self.mistakes += 1
@@ -90,7 +80,7 @@ class Letter_test(Read_database):
             print('The word does not contain the letter.\n')
             self.read_draws(draw=(self.mistakes))
             self.print_draws()
-            self.__print_gap__()
+            self.print_gap()
             self.__check_defeat__()
 
     def __check_win__(self):
@@ -100,7 +90,7 @@ class Letter_test(Read_database):
 
         if (self.gap.count('_') == 0):
             print('\nYou win!')
-            self.__continue = False
+            self.continue_game = False
 
     def __check_defeat__(self):
         """
@@ -110,4 +100,4 @@ class Letter_test(Read_database):
         if (self.mistakes == 4):
             print('\nGame over!')
             print('The word was ' + self.word + '.')
-            self.__continue = False
+            self.continue_game = False
