@@ -2,6 +2,8 @@
 The Hangman Game
 """
 
+import os
+
 class Letter_test:
     """
     Letter Test
@@ -67,17 +69,21 @@ class Letter_test:
         __test.lower()
 
         if __test in self.word:
+            os.system('cls')
             self.checked_letters.append(__test)
             self.correct_letters.append(__test)
-            print('The word contains the letter.\n')
+            print('The category is ' + self.category + '.')
+            print('The word contains the letter ' + __test + '.\n')
             self.__modify_gap__(test=__test)
             self.print_draws()
             self.print_gap()
             self.__check_win__()
         else:
+            os.system('cls')
             self.mistakes += 1
             self.checked_letters.append(__test)
-            print('The word does not contain the letter.\n')
+            print('The category is ' + self.category + '.')
+            print('The word does not contain the letter ' + __test + '.\n')
             self.read_draws(draw=(self.mistakes))
             self.print_draws()
             self.print_gap()
