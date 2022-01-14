@@ -20,7 +20,7 @@ Observations:
 5. Python Loops
 6. Python Functions
 7. Review
-8. Function Parameters and Caesar Cipher
+8. Function Parameters
 9. Dictionaries, Nesting and Auction
 10. Functions with Outputs
 11. Review
