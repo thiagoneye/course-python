@@ -7,6 +7,7 @@
 5. PyPassword Generator
 6. (Game executed online)
 7. Hangman (Game)
+8. Caesar Cipher
 
 Observations:
 - The project 7 was to be developed with the structured paradigm but was developed with object-oriented paradigm by personal choice. Also, some features were added, making the code a little more robust.
@@ -20,7 +21,7 @@ Observations:
 5. Python Loops
 6. Python Functions
 7. Review
-8. Function Parameters and Caesar Cipher
+8. Function Parameters
 9. Dictionaries, Nesting and Auction
 10. Functions with Outputs
 11. Review
