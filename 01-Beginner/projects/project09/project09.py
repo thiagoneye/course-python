@@ -3,7 +3,9 @@ Secret Auction
 """
 
 import os
+from logo import logo
 
+print(logo)
 print("Welcome to the secret auction program.")
 
 exit_program = False
@@ -16,7 +18,7 @@ while not exit_program:
     while not bid.isnumeric():
         bid = input("Invalid option, please enter a numeric value.\nR$ ")
 
-    data[float(bid)] = name
+    data[name] = float(bid)
 
     other_bidders = input("Are there any other bidders? Type 'yes' or 'no'.\n")
 
@@ -28,5 +30,10 @@ while not exit_program:
 
     os.system('cls')
 
-winner = data[max(data.keys())]
-print(f"The winner is {winner} with a bit of R$ {max(data.keys()):.2f}.")
+winner = list(data.keys())[0]
+
+for key in data:
+    if (data[key] > data[winner]):
+        winner = key
+
+print(f"The winner is {winner} with a bit of R$ {data[winner]:.2f}.")
