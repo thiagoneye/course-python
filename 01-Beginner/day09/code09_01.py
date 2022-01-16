@@ -17,12 +17,12 @@ student_grades = dict()
 
 for key in student_scores:
     value = student_scores[key]
-    
-    if value >= 91:
+
+    if value > 90:
         grade = 'Outstanding'
-    elif value >= 81:
+    elif value > 80:
         grade = 'Exceeds Expectations'
-    elif value >= 71:
+    elif value > 70:
         grade = 'Acceptable'
     else:
         grade = 'Fail'
