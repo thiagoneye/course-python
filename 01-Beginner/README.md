@@ -26,6 +26,7 @@
 7. Hangman (Game)
 8. Caesar Cipher
 9. Secret Auction
+10. Calculator
 
 Observations:
 - The project 7 was to be developed with the structured paradigm but was developed with object-oriented paradigm by personal choice. Also, some features were added, making the code a little more robust.
