@@ -27,6 +27,7 @@
 8. Caesar Cipher
 9. Secret Auction
 10. Calculator
+11. Blackjack (Game)
 
 Observations:
-- The project 7 was to be developed with the structured paradigm but was developed with object-oriented paradigm by personal choice. Also, some features were added, making the code a little more robust.
+- The projects 7 and 11 would be developed with the structured paradigm, but were developed with the object-oriented paradigm (by personal choice). Also, some features have been added, making the codes a little more robust..
