@@ -62,15 +62,3 @@ class Hand(object):
         self.hand.append(self.deck.pull_card())
         self.convert_hand()
         self.get_score()
-
-    """
-    def split(self):
-        \"""
-        Splits the hand cards.
-        \"""
-        if ((len(self.hand) == 2) and (self.hand[0] == self.hand[1])):
-            self.hand_split = self.hand[0]
-            self.hand = self.hand[0]
-        else:
-            print("You can't split the cards.")
-    """

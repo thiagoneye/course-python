@@ -2,6 +2,7 @@
 The Blackjack
 """
 
+import numpy as np
 from Hand import Hand
 from Chips import Chips
 
@@ -23,32 +24,24 @@ class Player(Hand, Chips):
         """
         Adds a new card to the hand.
         """
-        if not self.double:
-            if (self.score < 21):
-                if self.dealer:
-                    if (len(self.hand) < 5):
-                        Hand.add_card(self)
-                    else:
-                        print("You have reached the limit of cards in your hand.")
-                else:
+        if (self.score < 21):
+            if self.dealer:
+                if (len(self.hand) < 5):
                     Hand.add_card(self)
+                else:
+                    print("You have reached the limit of cards in your hand.")
+            else:
+                Hand.add_card(self)
 
     def convert_hand(self):
         """
         Converts the hand cards from numbers to strings.
         """
+        Hand.convert_hand(self)
         if self.dealer:
-            self.hand_letter = list()
-
-            idx = 0
-            for card in self.hand:
-                if idx > 0:
-                    self.hand_letter.append("?")
-                    idx += 1
-                else:
-                    self.hand_letter.append(str(card))
-        else:
-            Hand.convert_hand(self)
+            self.hand_dealer = np.array(self.hand_letter)
+            self.hand_dealer[1:] = '?'
+            self.hand_dealer = list(self.hand_dealer)
 
     def double_bet(self):
         """
@@ -56,4 +49,3 @@ class Player(Hand, Chips):
         """
         Chips.double_bet(self)
         self.add_card()
-        self.double = True
