@@ -21,13 +21,7 @@ class Blackjack(object):
 
         print("Let the game start!")
 
-    def __del__(self):
-        """
-        Destructor.
-        """
-        print("Endgame!")
-
-    def round(self):
+    def round_game(self):
         """
         Start the round.
         """
@@ -38,11 +32,14 @@ class Blackjack(object):
         self.player.get_hand(self.my_deck)
         self.croupier.get_hand(self.my_deck)
 
+        # Player Hit
+
+        print(f"\nThe dealer have R$ {self.croupier.money}.")
+        self.player.set_bet()
+        self.croupier.bet = self.player.bet
+
         while self.hit_round:
             self.print_cards()
-
-            self.player.set_bet()
-            self.croupier.bet = self.player.bet
 
             option = input("\nWhat do you want to do? [1] Hit, [2] Stand, [3] Double Down or [4] Surrender.\n")
             while option not in ['1', '2', '3', '4']:
@@ -59,6 +56,23 @@ class Blackjack(object):
             else:
                 self.surrender()
 
+        # Dealer Hit
+
+        if (self.player.score > 21) or (self.croupier.score >= 16):
+            dealer_hit = False
+        else:
+            dealer_hit = True
+
+        while dealer_hit:
+            self.croupier.add_card()
+            if (self.croupier.score >= 16):
+                dealer_hit = False
+
+        # Winner
+
+        if (option != 4):
+            self.verify_scores()
+
     def print_cards(self):
         """
         Prints the cards on the hands.
@@ -66,7 +80,7 @@ class Blackjack(object):
         print("\nYour cards:")
         print(*self.player.hand_letter)
 
-        print("The dealer cards:")
+        print("The dealer's cards:")
         print(*self.croupier.hand_dealer)
 
     def verify_scores(self):
@@ -86,19 +100,19 @@ class Blackjack(object):
             else:
                 self.result_round = 2
 
-        print("\nThe dealer cards:")
+        print("\nThe dealer's cards:")
         print(*self.croupier.hand_letter)
 
         if (self.result_round == 1):
-            print("You win the round!")
+            print("\nYou win the round!")
             self.player.money += self.player.bet
             self.croupier.money -= self.player.bet
         elif (self.result_round == 2):
-            print("You defeat the round!")
+            print("\nYou defeat the round!")
             self.player.money -= self.player.bet
             self.croupier.money += self.player.bet
         else:
-            print("The result was draw!")
+            print("\nThe result was draw!")
 
     def verify_money(self):
         """
@@ -112,13 +126,11 @@ class Blackjack(object):
             self.continue_game = False
 
     def hit(self):
+        """
+        Pull a card.
+        """
         self.player.add_card()
-        self.croupier.add_card()
-        if ((self.player.score >= 21) or (self.croupier.score >= 21)):
-            print("\nYour cards:")
-            print(*self.player.hand_letter)
-
-            self.verify_scores()
+        if (self.player.score >= 21):
             self.hit_round = False
 
     def stand(self):
@@ -126,21 +138,19 @@ class Blackjack(object):
         Not pulling any more cards.
         """
         self.hit_round = False
-        self.verify_scores()
 
     def double(self):
         """
         Double the bet.
         """
         self.player.double_bet()
-        self.croupier.double_bet()
+        self.croupier.bet = self.player.bet
         self.hit_round = False
-        self.verify_scores()
 
     def surrender(self):
         """
         Abandon the round.
         """
         self.hit_round = False
-        self.player.money -= self.player.bet/2
-        self.croupier.money += self.player.bet/2
+        self.player.money -= int(self.player.bet/2)
+        self.croupier.money += int(self.player.bet/2)

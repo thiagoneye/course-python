@@ -12,15 +12,17 @@ print("Welcome to the Blackjack!")
 game = Blackjack()
 
 while game.continue_game:
-    game.round()
+    game.round_game()
+    game.verify_money()
 
-    exit_game = input("Do you want exit the game? [Y] Yes or [N] No.\n")
-    while exit_game not in ['Y', 'N']:
-        exit_game = input("Invalid option. Please, type again.\n")
+    if game.continue_game:
+        exit_game = input("Do you want exit the game? [Y] Yes or [N] No.\n")
+        while exit_game not in ['Y', 'N']:
+            exit_game = input("Invalid option. Please, type again.\n")
 
-    if exit_game == 'Y':
-        game.continue_game = False
-        print(f"Your money is R$ {game.player.money}.")
-        print("Bye bye!")
-    else:
-        os.system('cls')
+        if exit_game == 'Y':
+            game.continue_game = False
+            print(f"Your money is R$ {game.player.money}.")
+            print("Bye bye!")
+        else:
+            os.system('cls')

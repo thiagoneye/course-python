@@ -18,8 +18,8 @@ class Chips(object):
         """
         Sets a bet.
         """
-        print(f"\nYou have R$ {self.money}.")
-        value = input("What is your bit? Type a value:\nR$ ")
+        print(f"You have R$ {self.money}.")
+        value = input("What is your bet? Type a value:\nR$ ")
         while ((not value.isdigit()) or (int(value) > self.money)):
             if not value.isdigit():
                 value = input("Invalid option. Please type a integer value.\nR$ ")
@@ -30,6 +30,9 @@ class Chips(object):
 
         if value > self.bet:
             self.bet = value
+
+        if (self.bet > self.money):
+            self.bet = self.money
 
         print(f"The bet is R$ {self.bet}.")
 
