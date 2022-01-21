@@ -29,4 +29,4 @@ After the initial two cards, the player has up to four options:
 
 ---
 
-Credits: [Wikipedia](https://en.wikipedia.org/wiki/Blackjack)
+Credits: [Wikipedia](https://en.wikipedia.org/wiki/Blackjack).
