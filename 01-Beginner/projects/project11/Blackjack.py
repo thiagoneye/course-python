@@ -45,33 +45,48 @@ class Blackjack(object):
             while option not in ['1', '2', '3', '4']:
                 option = input("Invalid option. Please, type again.\n")
 
-            option = int(option)
-
-            if (option == 1):
+            if (option == '1'):
                 self.hit()
-            elif (option == 2):
+            elif (option == '2'):
                 self.stand()
-            elif (option == 3):
+            elif (option == '3'):
                 self.double()
             else:
                 self.surrender()
 
         # Dealer Hit
 
-        if (self.player.score > 21) or (self.croupier.score >= 16):
+        if (self.player.score > 21):
             dealer_hit = False
         else:
-            dealer_hit = True
+            if (self.player.score > self.croupier.score):
+                dealer_hit = True
+            elif (self.player.score == self.croupier.score):
+                if (self.croupier.score < 16):
+                    dealer_hit = True
+                else:
+                    dealer_hit = False
+            else:
+                dealer_hit = False
 
         while dealer_hit:
             self.croupier.add_card()
-            if (self.croupier.score >= 16):
+            if (self.croupier.score >= 21):
                 dealer_hit = False
+            else:
+                if (self.player.score < self.croupier.score):
+                    dealer_hit = False
+                elif (self.player.score == self.croupier.score):
+                    if (self.croupier.score >= 16):
+                        dealer_hit = False
 
         # Winner
 
-        if (option != 4):
+        if (option != '4'):
             self.verify_scores()
+
+        if (option == '3'):
+            self.player.bet = self.croupier.bet
 
     def print_cards(self):
         """
@@ -80,7 +95,7 @@ class Blackjack(object):
         print("\nYour cards:")
         print(*self.player.hand_letter)
 
-        print("The dealer's cards:")
+        print("\nThe dealer's cards:")
         print(*self.croupier.hand_dealer)
 
     def verify_scores(self):
@@ -131,6 +146,8 @@ class Blackjack(object):
         """
         self.player.add_card()
         if (self.player.score >= 21):
+            print("\nYour cards:")
+            print(*self.player.hand_letter)
             self.hit_round = False
 
     def stand(self):
@@ -144,7 +161,8 @@ class Blackjack(object):
         Double the bet.
         """
         self.player.double_bet()
-        self.croupier.bet = self.player.bet
+        print("\nYour cards:")
+        print(*self.player.hand_letter)
         self.hit_round = False
 
     def surrender(self):
