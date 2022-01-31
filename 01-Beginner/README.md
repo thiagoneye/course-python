@@ -29,6 +29,8 @@
 10. Calculator
 11. Blackjack (Game)
 12. Number Guessing (Game)
+13. (Online Debugging Exercises)
+14. Higher or Lower (Game)
 
 Observations:
 - The projects 7 and 11 would be developed with the structured paradigm, but were developed with the object-oriented paradigm (by personal choice). Also, some features have been added, making the codes a little more robusts.
