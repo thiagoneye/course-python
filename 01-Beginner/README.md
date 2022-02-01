@@ -23,14 +23,15 @@
 4. Rock Paper Scissors (Game)
 5. PyPassword Generator
 6. (Game executed online)
-7. Hangman (Game)
+7. Hangman (Game)*
 8. Caesar Cipher
 9. Secret Auction
 10. Calculator
-11. Blackjack (Game)
+11. Blackjack (Game)*
 12. Number Guessing (Game)
 13. (Online Debugging Exercises)
 14. Higher or Lower (Game)
 
 Observations:
 - The projects 7 and 11 would be developed with the structured paradigm, but were developed with the object-oriented paradigm (by personal choice). Also, some features have been added, making the codes a little more robusts.
+- The asterisk symbol (\*) indicates my favorites projects 
