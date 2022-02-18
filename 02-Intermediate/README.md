@@ -22,7 +22,7 @@
 
 15. Coffee Machine
 16. Coffee Machine (OOP)
-17. (quiz online)
+17. Quiz (game)
 18. Hirst Painting
 19. Turtle Race
 20. Snake Game - Part I
