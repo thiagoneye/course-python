@@ -1,8 +1,8 @@
 # Studied Contents
 
 15. Local Development Environment Setup
-16. Object Oriented Programming (OOP)
-17. Object Oriented Programming (OOP)
+16. Object-Oriented Programming (OOP)
+17. Object-Oriented Programming (OOP)
 18. Turtle Library and Graphical User Interface (GUI)
 19. Instances, State and Higher Order Functions
 20. Practice
