@@ -42,21 +42,18 @@ for idx in range(len(turtle_names)):
 
 # Actions
 def run(turtle):
+    """The turtle run a random value."""
     turtle.forward(rd.randint(0, 10))
 
 
-def get_xcor(turtle):
-    xcor = turtle.xcor()
-    return xcor
-
-
 def start_race():
+    """Start (and finish) the race."""
     continue_race = True
     while continue_race:
         current_positions = list()
         for turtle in turtles:
             run(turtle)
-            current_positions.append(get_xcor(turtle))
+            current_positions.append(turtle.xcor())
 
         if max(current_positions) >= 300.0:
             continue_race = False
@@ -75,7 +72,7 @@ screen.onkey(fun=start_race, key='space')
 screen.exitonclick()
 
 # Bet
-positions = [get_xcor(turtle) for turtle in turtles]
+positions = [turtle.xcor() for turtle in turtles]
 winner_idx = positions.index(max(positions))
 winner_name = turtle_names[winner_idx]
 winner_color = turtle_colors[winner_idx]
