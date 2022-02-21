@@ -30,29 +30,36 @@ def set_initial_position(turtle, ycor):
 
 
 # Objects
-leonardo = create_turtle('blue')
-raphael = create_turtle('purple')
-donatello = create_turtle('red')
-michelangelo = create_turtle('orange')
+turtle_names = ['Leonardo', 'Raphael', 'Donatello', 'Michelangelo']
+turtle_colors = ['blue', 'purple', 'red', 'orange']
+turtle_coord = [75, 25, -25, -75]
 
-# Positions
-set_initial_position(leonardo, 75)
-set_initial_position(raphael, 25)
-set_initial_position(donatello, -25)
-set_initial_position(michelangelo, -75)
+turtles = list()
+for idx in range(len(turtle_names)):
+    new_turtle = create_turtle(turtle_colors[idx])
+    set_initial_position(new_turtle, turtle_coord[idx])
+    turtles.append(new_turtle)
 
 
 # Actions
+def run(turtle):
+    turtle.forward(rd.randint(0, 10))
+
+
+def get_xcor(turtle):
+    xcor = turtle.xcor()
+    return xcor
+
+
 def start_race():
     continue_race = True
     while continue_race:
-        leonardo.forward(rd.randint(0, 10))
-        raphael.forward(rd.randint(0, 10))
-        donatello.forward(rd.randint(0, 10))
-        michelangelo.forward(rd.randint(0, 10))
+        new_positions = list()
+        for turtle in turtles:
+            run(turtle)
+            new_positions.append(get_xcor(turtle))
 
-        if (leonardo.xcor() >= 300.0) or (raphael.xcor() >= 300.0) or (donatello.xcor() >= 300.0) \
-                or (michelangelo.xcor() >= 300.0):
+        if max(new_positions) >= 300.0:
             continue_race = False
 
 
@@ -69,10 +76,12 @@ screen.onkey(fun=start_race, key='space')
 screen.exitonclick()
 
 # Bet
-positions = [leonardo.xcor(), raphael.xcor(), donatello.xcor(), michelangelo.xcor()]
+positions = [get_xcor(turtle) for turtle in turtles]
 winner_idx = positions.index(max(positions))
-winner_name = ['Leonardo', 'Raphael', 'Donatello', 'Michelangelo'][winner_idx]
-winner_color = {'Leonardo': 'blue', 'Raphael': 'purple', 'Donatello': 'red', 'Michelangelo': 'orange'}[winner_name]
+winner_name = turtle_names[winner_idx]
+winner_color = turtle_colors[winner_idx]
+
+# Outputs
 print(f'The winner is {winner_name}, the {winner_color} turtle.')
 if bet == winner_color:
     print('You winn!')
