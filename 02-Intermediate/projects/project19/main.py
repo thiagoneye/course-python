@@ -25,7 +25,6 @@ def set_initial_position(turtle, ycor):
     turtle.hideturtle()
     turtle.penup()
     turtle.setpos(x=-300, y=ycor)
-    turtle.pendown()
     turtle.showturtle()
 
 
@@ -54,12 +53,12 @@ def get_xcor(turtle):
 def start_race():
     continue_race = True
     while continue_race:
-        new_positions = list()
+        current_positions = list()
         for turtle in turtles:
             run(turtle)
-            new_positions.append(get_xcor(turtle))
+            current_positions.append(get_xcor(turtle))
 
-        if max(new_positions) >= 300.0:
+        if max(current_positions) >= 300.0:
             continue_race = False
 
 
