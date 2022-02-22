@@ -24,9 +24,9 @@
 16. Coffee Machine (OOP)
 17. Quiz (game)
 18. Hirst Painting
-19. Turtle Race (game)*
-20. Snake Game - Part I
-21. Snake Game - Part II
+19. Turtle Race (game)
+20. Snake Game - Part I*
+21. Snake Game - Part II*
 22. Pong
 23. The Turtle Crossing
 24. Mail Merge
