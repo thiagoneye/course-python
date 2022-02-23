@@ -14,7 +14,7 @@ from turtle import Turtle
 # Constants
 
 MOVE_DISTANCE = 20
-START_COORDS = [-20, 0, 20]
+START_COORDS = [20, 0, -20]
 RIGHT = 0
 UP = 90
 LEFT = 180
@@ -23,24 +23,28 @@ DOWN = 270
 
 # Functions
 
-def new_segment(xcoord, ycoord=0):
-    segment = Turtle(shape='square')
-    segment.penup()
-    segment.color('white')
-    segment.setx(xcoord)
-    segment.sety(ycoord)
-    return segment
-
-
 # Classes
 
 class Snake:
     def __init__(self):
         self.body = list()
         for coord in START_COORDS:
-            self.body.append(new_segment(xcoord=coord))
+            self.new_segment(xcoord=coord)
 
         self.head = self.body[0]
+
+    def new_segment(self, xcoord, ycoord=0.0):
+        segment = Turtle(shape='square')
+        segment.penup()
+        segment.color('white')
+        segment.setx(xcoord)
+        segment.sety(ycoord)
+        self.body.append(segment)
+
+    def grow(self):
+        new_x = self.body[-1].xcor()
+        new_y = self.body[-1].ycor()
+        self.new_segment(xcoord=new_x, ycoord=new_y)
 
     def move(self):
         for idx in range(len(self.body)-1, 0, -1):

@@ -10,17 +10,27 @@ Snake Game
 # Imports
 
 import random as rd
-from snake import new_segment
+from turtle import Turtle
 
 
 # Classes
 
-class Food:
+class Food(Turtle):
     def __init__(self, screen_width, screen_height):
-        self.food = None
-        self.new_food(screen_width, screen_height)
+        super().__init__()
+        self.shape('circle')
+        self.penup()
+        self.shapesize(stretch_len=0.5, stretch_wid=0.5)
+        self.color('white')
+        self.speed(0)
 
-    def new_food(self, screen_width, screen_height):
-        xvalue = rd.randint((-screen_width / 2.) + 20., (screen_width / 2.) - 20.)
-        yvalue = rd.randint((-screen_height / 2.) + 20., (screen_height / 2.) - 20.)
-        self.food = new_segment(xcoord=xvalue, ycoord=yvalue)
+        random_x = rd.randint((-screen_width / 2.) + 20., (screen_width / 2.) - 20.)
+        random_y = rd.randint((-screen_height / 2.) + 20., (screen_height / 2.) - 20.)
+        self.setx(random_x)
+        self.sety(random_y)
+
+    def refresh(self, screen_width, screen_height):
+        random_x = rd.randint((-screen_width / 2.) + 20., (screen_width / 2.) - 20.)
+        random_y = rd.randint((-screen_height / 2.) + 20., (screen_height / 2.) - 20.)
+        self.setx(random_x)
+        self.sety(random_y)
