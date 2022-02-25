@@ -20,6 +20,7 @@ from scoreboard import Scoreboard
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 COORDS_X = [-SCREEN_WIDTH/2 + 40., SCREEN_WIDTH/2 - 40.]
+ACCELERATION = 0.80
 
 # Create Screen
 
@@ -50,14 +51,15 @@ paddle2 = Paddle(coord=COORDS_X[1], screen_height=SCREEN_HEIGHT)
 
 # Actions
 
-def start_game():
+def start_round():
     paddle1.sety(0)
     paddle2.sety(0)
+    time_sleep = 0.1
 
     continue_game = True
     while continue_game:
         screen.update()
-        time.sleep(0.1)
+        time.sleep(time_sleep)
 
         # Ball Movement
         ball.move()
@@ -68,9 +70,10 @@ def start_game():
             ball.setheading(new_angle)
 
         # Collision with the Paddles
-        if (abs(ball.xcor()) > (COORDS_X[1] - 30)) and ((ball.distance(paddle2) < 70) or (ball.distance(paddle1) < 70)):
+        if (abs(ball.xcor()) > (COORDS_X[1] - 30)) and ((ball.distance(paddle2) < 80) or (ball.distance(paddle1) < 80)):
             new_angle = 180 - ball.heading()
             ball.setheading(new_angle)
+            time_sleep *= ACCELERATION
 
         # Stop Game
         if ball.xcor() < COORDS_X[0]:
@@ -87,7 +90,7 @@ def start_game():
 # Screen
 
 screen.listen()
-screen.onkey(fun=start_game, key='space')
+screen.onkey(fun=start_round, key='space')
 screen.onkeypress(fun=paddle1.go_up, key='w')
 screen.onkeypress(fun=paddle1.go_down, key='s')
 screen.onkeypress(fun=paddle2.go_up, key='Up')
