@@ -14,8 +14,9 @@ import random as rd
 
 # Constants
 
-ANGLES = list(range(1, 61)) + list(range(120, 241)) + list(range(300, 360))
-ANGLES.remove(180)
+ANGLESR = list(range(1, 61)) + list(range(300, 360))
+ANGLESL = list(range(120, 241))
+ANGLESL.remove(180)
 
 
 # Classes
@@ -29,6 +30,7 @@ class Ball(Turtle):
         self.color('white')
         self.speed('slowest')
 
+        self.direction = 'left'
         self.new_round()
 
     def move(self):
@@ -36,4 +38,9 @@ class Ball(Turtle):
 
     def new_round(self):
         self.home()
-        self.setheading(rd.choice(ANGLES))
+        if self.direction == 'left':
+            self.setheading(rd.choice(ANGLESL))
+            self.direction = 'right'
+        else:
+            self.setheading(rd.choice(ANGLESR))
+            self.direction = 'left'
