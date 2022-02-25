@@ -22,9 +22,9 @@
 
 15. Coffee Machine
 16. Coffee Machine (OOP)
-17. Quiz (game)
+17. Quiz
 18. Hirst Painting
-19. Turtle Race (game)
+19. Turtle Race
 20. Snake Game - Part I*
 21. Snake Game - Part II*
 22. Pong
