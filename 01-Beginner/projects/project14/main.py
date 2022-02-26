@@ -46,7 +46,7 @@ while restart_game:
         # Inputs
         who_win = input("\nWho has more followers? Type 'A' or 'B': ")
         while who_win not in ["A", "B"]:
-            who_win = input("Invalid input, please type again: ")
+            who_win = input("Invalid inputs, please type again: ")
 
         # Comparasion
         if (optionA["follower_count"] > optionB["follower_count"]):
@@ -88,7 +88,7 @@ while restart_game:
 
             want_again = input("\nDo you want play again? Type 'Yes' or 'No': ")
             while want_again not in ["Yes", "No"]:
-                want_again = input("Invalid input, please type again: ")
+                want_again = input("Invalid inputs, please type again: ")
 
             if (want_again == "No"):
                 restart_game = False

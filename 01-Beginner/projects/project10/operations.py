@@ -66,7 +66,7 @@ def root(x,y):
 
 def get_result(operat, x, y):
     """
-    Return the selected operation applied on the input values.
+    Return the selected operation applied on the inputs values.
 
     If the operation fails, the return will be a string.
     """
