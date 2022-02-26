@@ -12,12 +12,13 @@ PATH2 = '../project24/inputs/starting_letter.txt'
 PATH3 = '../project24/outputs/'
 
 with open(PATH1) as file1:
-    names = file1.read().split()
+    names = file1.readlines()
 
 with open(PATH2) as file2:
     letter = file2.read()
 
 for name in names:
+    name = name.replace('\n', '')
     new_letter = letter.replace('[name]', name)
 
     PATH = PATH3 + 'letter_for_' + name + '.txt'
