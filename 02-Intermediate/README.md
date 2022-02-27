@@ -30,7 +30,7 @@
 22. Pong
 23. The Turtle Crossing
 24. Mail Merge
-25. U.S. States Game
+25. U.S. States Game*
 26. NATO Alphabet
 27. Mile to Kilometers Converter
 28.
