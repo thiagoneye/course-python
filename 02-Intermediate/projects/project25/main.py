@@ -24,9 +24,8 @@ df = pd.read_csv('50_states.csv')
 
 screen = Screen()
 screen.title('U.S. States Game')
-# screen.screensize(canvwidth=, canvheight=)
+screen.setup(width=725, height=491)
 screen.addshape(IMAGE)
-
 turtle.shape(IMAGE)
 
 # Objects
@@ -57,7 +56,7 @@ while len(states_list) < 50:
         state.write(answer_state.title(), align='center')
 
 state.goto((0, 0))
-state.write('You Win!', align='center', font=('Arial', 18, 'normal'))
+state.write('YOU WIN', align='center', font=('Arial', 18, 'normal'))
 
 # Exit
 
