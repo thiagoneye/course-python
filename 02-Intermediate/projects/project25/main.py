@@ -37,26 +37,36 @@ state.speed('fastest')
 
 # Actions
 
+answer_state = ''
 correct_answers = 0
-states_list = list()
+listed_states = list()
+all_states = df.state.to_list()
 
-while len(states_list) < 50:
+while len(listed_states) < 50:
     text_input = f'{correct_answers}/50 States Correct'
-    answer_state = screen.textinput(title=text_input, prompt='What\'s another state\'s name?')
+    answer_state = screen.textinput(title=text_input, prompt='What\'s another state\'s name?').title()
 
-    if (answer_state.title() in df.state.values) and (answer_state.title() not in states_list):
+    if answer_state == 'Exit':
+        break
+
+    if (answer_state in df.state.values) and (answer_state not in listed_states):
         correct_answers += 1
-        states_list.append(answer_state.title())
+        listed_states.append(answer_state)
 
-        coord_x = df[df.state == answer_state.title()]['x'].values[0]
-        coord_y = df[df.state == answer_state.title()]['y'].values[0]
-        coords = (coord_x, coord_y)
-        state.goto(coords)
+        coord_x = df[df.state == answer_state]['x'].values[0]
+        coord_y = df[df.state == answer_state]['y'].values[0]
+        state.goto((coord_x, coord_y))
 
-        state.write(answer_state.title(), align='center')
+        state.write(answer_state, align='center')
 
-state.goto((0, 0))
-state.write('YOU WIN', align='center', font=('Arial', 18, 'normal'))
+if answer_state == 'Exit':
+    with open('unlisted_states.txt', mode='w') as file:
+        for name in all_states:
+            if name not in listed_states:
+                file.write(name + '\n')
+else:
+    state.goto((0, 0))
+    state.write('YOU WIN', align='center', font=('Arial', 18, 'normal'))
 
 # Exit
 
