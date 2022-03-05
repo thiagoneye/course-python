@@ -2,8 +2,7 @@ Arkansas
 Colorado
 Connecticut
 Delaware
-Georgia
-Hawaii
+Florida
 Idaho
 Illinois
 Indiana
@@ -13,7 +12,6 @@ Kentucky
 Louisiana
 Maine
 Maryland
-Massachusetts
 Michigan
 Minnesota
 Missouri
@@ -21,8 +19,10 @@ Montana
 Nebraska
 Nevada
 New Hampshire
-New Mexico
+New Jersey
+New York
 North Dakota
+Ohio
 Oklahoma
 Oregon
 Pennsylvania

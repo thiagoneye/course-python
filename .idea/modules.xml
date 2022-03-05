@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../course-database/cap18/.idea/cap18.iml" filepath="$PROJECT_DIR$/../course-database/cap18/.idea/cap18.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/course-python.iml" filepath="$PROJECT_DIR$/.idea/course-python.iml" />
     </modules>
   </component>
