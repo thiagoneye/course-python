@@ -6,7 +6,7 @@ All files were based on the course from the cited site.
 
 https://www.udemy.com/course/100-days-of-code/
 
-I'm currently on day 27.
+I'm currently on day 28.
 
 ## Others
 
