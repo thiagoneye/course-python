@@ -33,8 +33,8 @@
 25. U.S. States Game*
 26. NATO Alphabet
 27. Mile to Kilometers Converter
-28. None
-29. Password Manager GUI App
+28. Pomodorodo GUI Application*
+29. Password Manager GUI App*
 30. None
 31. Flash Card App
 
