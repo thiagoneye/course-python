@@ -34,8 +34,8 @@
 26. NATO Alphabet
 27. Mile to Kilometers Converter
 28. Pomodorodo GUI Application*
-29. Password Manager GUI App*
-30. None
+29. Password Manager GUI App - Part I*
+30. Password Manager GUI App - Part II*
 31. Flash Card App
 
 Observations:
