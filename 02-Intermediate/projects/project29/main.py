@@ -10,6 +10,7 @@ Building a Password Manager GUI with Tkinter
 
 # Imports
 
+import json
 from tkinter import *
 from tkinter import messagebox
 from password import password_generator
@@ -20,6 +21,25 @@ def get_password():
     password_entry.delete(0, END)
     password = password_generator()
     password_entry.insert(0, password)
+
+# Search Website
+
+def search_website():
+    website = website_entry.get()
+    try:
+        with open('my_pass.json', mode='r') as data_file:
+            data = json.load(data_file)
+    except FileNotFoundError:
+        messagebox.showerror(title='Error', message='No Data File Found.')
+    else:
+        data_file.close()
+
+        if website in data:
+            email = data[website]['email']
+            password = data[website]['password']
+            messagebox.showinfo(title=website, message=f"Email: {email}\nPassword: {password}")
+        else:
+            messagebox.showerror(title='Error', message=f'No details for {website} exists.')
 
 # Save Password
 
@@ -34,21 +54,33 @@ def save_data():
     website = website_entry.get()
     user = user_entry.get()
     password = password_entry.get()
+    new_data = {
+        website: {
+            'email': user,
+            'password': password
+            }
+        }
 
     # Actions
-    if (len(website) != 0) or (len(user) != 0) or (len(password) != 0):
-        is_ok = messagebox.askokcancel(title=website,
-                                       message=f'These are the details entered: \n\nUser: {user} \nPassword: {password}'
-                                               f'\n\nIs it ok to save?')
-
-        if is_ok:
-            with open('my_pass.txt', mode='a') as file:
-                file.writelines(f'{website} | {user} | {password}\n')
-
-            messagebox.showinfo(title='Success', message='Data has been saved successfully!')
-            clear_entries()
-    else:
+    if len(website) == 0 or len(password) == 0 or user == '@outlook.com':
         messagebox.showerror(title='Error', message='The fields cannot be empty!')
+    else:
+        try:
+            with open('my_pass.json', mode='r') as data_file:
+                # Reading old data
+                data = json.load(data_file)
+                # Updating old data with new data
+                data.update(new_data)
+        except FileNotFoundError:
+            data = new_data
+
+        with open('my_pass.json', mode='w') as data_file:
+           # Saving Updating data
+            json.dump(data, data_file, indent=4)
+
+        data_file.close()
+        website_entry.delete(0, END)
+        password_entry.delete(0, END)
 
 # UI Setup
 
@@ -74,8 +106,8 @@ password_label.grid(row=3, column=0)
 
 # Entries
 
-website_entry = Entry(width=52)
-website_entry.grid(row=1, column=1, columnspan=2)
+website_entry = Entry(width=33)
+website_entry.grid(row=1, column=1)
 website_entry.focus()
 
 user_entry = Entry(width=52)
@@ -86,6 +118,9 @@ password_entry = Entry(width=33)
 password_entry.grid(row=3, column=1)
 
 # Buttons
+
+search_button = Button(text='Search', width=15,  command=search_website)
+search_button.grid(row=1, column=2)
 
 generate_password_button = Button(text='Generate Password', command=get_password)
 generate_password_button.grid(row=3, column=2)

@@ -37,3 +37,4 @@ else:
     print(content)
 finally:
     file.close()
+    print('The file was closed.')
