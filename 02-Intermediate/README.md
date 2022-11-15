@@ -36,7 +36,7 @@
 28. Pomodorodo GUI Application*
 29. Password Manager GUI App - Part I*
 30. Password Manager GUI App - Part II*
-31. Flash Card App
+31. Flash Card App*
 
 Observations:
 
