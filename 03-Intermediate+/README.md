@@ -30,7 +30,7 @@
 
 # Projects
 
-32. Automated Birthday Wisher
+32. I. Send Motivational Quote and II. Automated Birthday Wisher
 33. ISS Overhead Notifier
 34. GUI Quiz App
 35. Send SMS

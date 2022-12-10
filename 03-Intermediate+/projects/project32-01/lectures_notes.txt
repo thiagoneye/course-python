@@ -1,0 +1,5 @@
+SMTP Host
+
+Gmail:   smtp.gmail.com
+Outlook: smtp.live.com
+Yahoo:   smtp.mail.yahoo.com
