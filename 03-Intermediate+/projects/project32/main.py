@@ -1,3 +1,13 @@
+"""
+100 Days of Code
+The Complete Python Pro Bootcamp
+Dra. Angela Yu
+
+Day 32
+
+Automated Birthday Wisher
+"""
+
 # Imports
 
 import os
