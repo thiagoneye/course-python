@@ -8,9 +8,14 @@ Day 34
 GUI Quiz App
 """
 
+# Imports
+
 from question_model import Question
 from data import question_data
 from quiz_brain import QuizBrain
+from ui import  QuizInterface
+
+# Main
 
 question_bank = []
 for question in question_data:
@@ -20,6 +25,7 @@ for question in question_data:
     question_bank.append(new_question)
 
 quiz = QuizBrain(question_bank)
+quiz_ui = QuizInterface()
 
 while quiz.still_has_questions():
     quiz.next_question()
