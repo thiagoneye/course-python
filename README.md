@@ -6,7 +6,7 @@ All files were based on the course from the cited site.
 
 https://www.udemy.com/course/100-days-of-code/
 
-I'm currently on [03-Intermediate+: Day 34](https://github.com/thiagoneye/course-python/tree/main/03-Intermediate+).
+I'm currently on [03-Intermediate+: Day 35](https://github.com/thiagoneye/course-python/tree/main/03-Intermediate+).
 
 ## Others
 
