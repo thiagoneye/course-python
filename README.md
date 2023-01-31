@@ -10,4 +10,4 @@ I'm currently on [03-Intermediate+: Day 35](https://github.com/thiagoneye/course
 
 ## Others
 
-See also the repositories [beecrowd-programming](https://github.com/thiagoneye/beecrowd-programming) and [book-oop](https://github.com/thiagoneye/book-oop).
+See also the repositories [course-alura](https://github.com/thiagoneye/course-alura), [beecrowd-programming](https://github.com/thiagoneye/beecrowd-programming) and [book-oop](https://github.com/thiagoneye/book-oop).
