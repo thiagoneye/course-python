@@ -33,7 +33,7 @@
 32. Automated Birthday Wisher
 33. ISS Overhead Notifier
 34. GUI Quiz App
-35. Send SMS
+35. Automate Check if it Will Rain
 36. Stock Trading News Alert
 37. Habit Tracking
 38. Workout Tracking Using Google Sheets
