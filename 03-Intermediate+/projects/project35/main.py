@@ -25,4 +25,3 @@ params = {
 
 data = requests.get(url=api, params=params)
 data = data.json()
-print(data)
