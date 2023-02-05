@@ -3,7 +3,7 @@
 32. Send Email (smtplib) and Manage Dates (datetime)
 33. API Endpoints and API Parameters
 34. API Practice
-35. Keys, Authentication and Environment Variables
+35. API Practice
 36. Practice
 37. API Post Requests and Headers
 38. Workout Tracking Using Google Sheets
